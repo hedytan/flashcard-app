@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcard Learning App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Flashcard Learning App</h1>
+      <p class="subtitle">Create, review, edit, and delete your flashcards in one page</p>
+    </header>
+
+    <div id="message-box"></div>
+    <div id="loading-box" style="display: none;">Loading flashcards...</div>
+
+    <section class="form-section">
+      <h2 id="form-title">Add a New Flashcard</h2>
+      <form id="flashcard-form">
+        <div class="form-group">
+          <label for="question">Question</label>
+          <input type="text" id="question" placeholder="Enter the question" required />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="">Select a category</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="SQL">SQL</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="answer">Answer</label>
+          <textarea id="answer" placeholder="Enter the answer" required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" id="submit-btn">Add Flashcard</button>
+          <button type="button" id="cancel-btn" style="display: none;">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="cards-section">
+      <div class="section-header">
+        <h2>My Flashcards</h2>
+        <p id="card-count">0 cards</p>
+      </div>
+
+      <div class="search-bar">
+        <p class="search-hint">Search by question or category</p>
+        <input type="text" id="search-input" placeholder="Type HTML, CSS, JavaScript, SQL..." />
+      </div>
+
+      <div id="flashcard-list" class="flashcard-list"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
